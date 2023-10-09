@@ -11,7 +11,7 @@ const Home = () => {
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
     const authToken = cookies.AuthToken
-
+    console.log(cookies)
     const handleClick = () => {
         if(authToken) {
             removeCookie('UserId', cookies.UserId)

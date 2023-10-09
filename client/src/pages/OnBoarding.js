@@ -21,6 +21,8 @@ const OnBoarding = () => {
         matches: []
 
     })
+    console.log(cookies.AuthToken);
+    console.log(cookies.UserId)
 
     let navigate = useNavigate()
 

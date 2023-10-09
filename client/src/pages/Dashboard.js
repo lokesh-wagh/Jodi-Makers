@@ -10,7 +10,7 @@ const Dashboard = () => {
     const [lastDirection, setLastDirection] = useState()
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
-
+    
     const userId = cookies.UserId
     const getUser = async () => {
         try {

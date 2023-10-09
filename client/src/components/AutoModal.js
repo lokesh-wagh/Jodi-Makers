@@ -1,6 +1,6 @@
 import {useState} from "react"
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import { useCookies} from "react-cookie";
 
 const AuthModal = ({ setShowModal, isSignUp }) => {
@@ -11,9 +11,16 @@ const AuthModal = ({ setShowModal, isSignUp }) => {
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
     let navigate = useNavigate()
+    
+    const handleGoogleLogin=(e)=>{
+        try{
+            e.preventDefault();
+            window.location.href='http://localhost:8000/authgoogle'
+        }
+        catch{
 
-
-
+        }
+    }
 
 
     const handleClick = () => {
@@ -82,10 +89,14 @@ const AuthModal = ({ setShowModal, isSignUp }) => {
                 />}
 
                 <input className="secondary-button" type="submit"/>
+                <button className="secondary-button" onClick={handleGoogleLogin}>Google</button>
                 <p>{error}</p>
 
             </form>
+            
+            
             <hr/>
+            
             <h2>GET THE APP</h2>
 
         </div>
